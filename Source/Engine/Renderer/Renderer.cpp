@@ -16,7 +16,7 @@ namespace nc
 
 	void Renderer::Shutdown()
 	{
-		SDL_DestroyRenderer(m_renderer);
+		SDL_GL_DeleteContext(m_context);
 		SDL_DestroyWindow(m_window);
 		TTF_Quit();
 		IMG_Quit();
@@ -27,18 +27,32 @@ namespace nc
 		m_width = width;
 		m_height = height;
 
-		m_window = SDL_CreateWindow(title.c_str(), 100, 100, width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
-		m_renderer = SDL_CreateRenderer(m_window, -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED);
+		m_window = SDL_CreateWindow(title.c_str(), 100, 100, width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
+
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_COMPATIBILITY);
+
+		SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+		SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
+
+		SDL_GL_SetSwapInterval(1);
+
+		m_context = SDL_GL_CreateContext(m_window);
+		gladLoadGL();
+
+		glViewport(0, 0, width, height);
 	}
 
 	void Renderer::BeginFrame()
 	{
-		SDL_RenderClear(m_renderer);
+		glClearColor(0, 0, 0, 0);
+		glClear(GL_COLOR_BUFFER_BIT);
 	}
 
 	void Renderer::EndFrame()
 	{
-		SDL_RenderPresent(m_renderer);
+		SDL_GL_SwapWindow(m_window);
 	}
 
 	void Renderer::SetColor(uint8_t r, uint8_t g, uint8_t b, uint8_t a)
