@@ -24,6 +24,13 @@ namespace nc
         m_angle += 90 * dt;
         m_position.x += ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_A) ? -dt : 0;
         m_position.x += ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_D) ? dt : 0;
+
+        m_position.y += ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_S) ? -dt : 0;
+        m_position.y += ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_W) ? dt : 0;
+
+        m_angle += ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_Q) ? -dt * 90 : 0;
+        m_angle += ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_E) ? dt * 90 : 0;
+       
         m_time += dt;
     }
 
@@ -35,9 +42,8 @@ namespace nc
         // render    
         glPushMatrix();
         glTranslatef(m_position.x, m_position.y, 0);
-        //glRotatef(m_angle, 1, 1, 1);
+        glRotatef(m_angle, 1, 1, 1);
         glScalef(sin(m_time * 5) * 0.5f, 1, 1);
-        //glScalef(sin(m_time), sin(m_time), sin(m_time));
 
         glBegin(GL_TRIANGLES);
 
