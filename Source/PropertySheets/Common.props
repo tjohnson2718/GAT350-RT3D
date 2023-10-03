@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <TempDir>$(SolutionDir)Temp\$(PlatformName)\$(Configuration)\$(ProjectName)\</TempDir>
+    <BinDir>$(SolutionDir)Bin\$(PlatformName)\$(Configuration)\$(ProjectName)\</BinDir>
+    <BuildDir>$(SolutionDir)Build</BuildDir>
+    <EngineDir>$(SolutionDir)Source\Engine\</EngineDir>
+    <GameDir>$(SolutionDir)Source\Game\</GameDir>
+    <ThirdPartyDir>$(SolutionDir)Source\ThirdParty\</ThirdPartyDir>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutDir>$(BinDir)</OutDir>
+    <IntDir>$(TempDir)</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <ClCompile />
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(GameDir);$(EngineDir);$(ThirdPartyDir);$(ThirdPartyDir)glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="TempDir">
+      <Value>$(TempDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="BinDir">
+      <Value>$(BinDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="BuildDir">
+      <Value>$(BuildDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="EngineDir">
+      <Value>$(EngineDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="GameDir">
+      <Value>$(GameDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ThirdPartyDir">
+      <Value>$(ThirdPartyDir)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
