@@ -5,6 +5,9 @@
 
 namespace nc
 {
+	void APIENTRY DebugCallback(GLenum source, GLenum type, GLuint id,
+		GLenum severity, GLsizei length, const GLchar* message, const void* param);
+
 	bool Renderer::Initialize()
 	{
 		SDL_Init(SDL_INIT_VIDEO);
@@ -40,6 +43,9 @@ namespace nc
 
 		m_context = SDL_GL_CreateContext(m_window);
 		gladLoadGL();
+
+		glEnable(GL_DEBUG_OUTPUT);
+		glDebugMessageCallback(DebugCallback, 0);
 
 		glViewport(0, 0, width, height);
 	}
@@ -145,5 +151,84 @@ namespace nc
 
 		// https://wiki.libsdl.org/SDL2/SDL_RenderCopyEx
 		SDL_RenderCopyEx(m_renderer, texture->m_texture, (SDL_Rect*)(&source), &dest, RadiansToDegrees(mx.GetRotation()), &center, (flipH) ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE);
+	}
+
+	void APIENTRY DebugCallback(GLenum source, GLenum type, GLuint id,
+		GLenum severity, GLsizei length, const GLchar* message, const void* param) {
+
+		std::string sourceString;
+		switch (source)
+		{
+		case GL_DEBUG_SOURCE_WINDOW_SYSTEM:
+			sourceString = "WindowSys";
+			break;
+		case GL_DEBUG_SOURCE_APPLICATION:
+			sourceString = "App";
+			break;
+		case GL_DEBUG_SOURCE_API:
+			sourceString = "OpenGL";
+			break;
+		case GL_DEBUG_SOURCE_SHADER_COMPILER:
+			sourceString = "ShaderCompiler";
+			break;
+		case GL_DEBUG_SOURCE_THIRD_PARTY:
+			sourceString = "3rdParty";
+			break;
+		case GL_DEBUG_SOURCE_OTHER:
+			sourceString = "Other";
+			break;
+		default:
+			sourceString = "Unknown";
+		}
+
+		std::string typeString;
+		switch (type)
+		{
+		case GL_DEBUG_TYPE_ERROR:
+			typeString = "Error";
+			break;
+		case GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR:
+			typeString = "Deprecated";
+			break;
+		case GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR:
+			typeString = "Undefined";
+			break;
+		case GL_DEBUG_TYPE_PORTABILITY:
+			typeString = "Portability";
+			break;
+		case GL_DEBUG_TYPE_PERFORMANCE:
+			typeString = "Performance";
+			break;
+		case GL_DEBUG_TYPE_MARKER:
+			typeString = "Marker";
+			break;
+		case GL_DEBUG_TYPE_PUSH_GROUP:
+			typeString = "PushGrp";
+			break;
+		case GL_DEBUG_TYPE_POP_GROUP:
+			typeString = "PopGrp";
+			break;
+		case GL_DEBUG_TYPE_OTHER:
+			typeString = "Other";
+			break;
+		default:
+			typeString = "Unknown";
+		}
+
+		switch (severity)
+		{
+		case GL_DEBUG_SEVERITY_HIGH:
+			ASSERT_LOG(0, "OPENGL Source: " << sourceString << " Type: " << typeString << "(" << id << ") | " << message);
+			break;
+		case GL_DEBUG_SEVERITY_MEDIUM:
+			ERROR_LOG("OPENGL Source: " << sourceString << " Type: " << typeString << "(" << id << ") | " << message);
+			break;
+		case GL_DEBUG_SEVERITY_LOW:
+			WARNING_LOG("OPENGL Source: " << sourceString << " Type: " << typeString << "(" << id << ") | " << message);
+			break;
+		case GL_DEBUG_SEVERITY_NOTIFICATION:
+			INFO_LOG("OPENGL Source: " << sourceString << " Type: " << typeString << "(" << id << ") | " << message);
+			break;
+		}
 	}
 }

@@ -1,4 +1,5 @@
 #include "World01.h"
+#include "World02.h"
 #include "Core/Core.h"
 #include "Framework/Framework.h"
 #include "Renderer/Renderer.h"
@@ -15,7 +16,7 @@ int main(int argc, char* argv[])
 
 	ENGINE.Initialize();
 
-	auto world = make_unique<nc::World01>();
+	auto world = make_unique<nc::World02>();
 	world->Initialize();
 
 	// main loop
