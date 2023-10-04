@@ -39,7 +39,7 @@ namespace nc
         // pre-render
         renderer.BeginFrame();
 
-        // render    
+        // render  
         glPushMatrix();
         glTranslatef(m_position.x, m_position.y, 0);
         glRotatef(m_angle, 1, 1, 1);
@@ -57,7 +57,131 @@ namespace nc
         glVertex2f(0.5f, -0.5f);
 
         glEnd();
+        glPopMatrix();
 
+        //Pumpkin Body
+        glPushMatrix();
+
+        glBegin(GL_TRIANGLE_FAN);
+
+        glColor3f(1.0f, 0.5f, 0.0f);
+        glVertex2f(0.0f, 0.0f);
+
+        glColor3f(1.0f, 0.5f, 0.0f);
+        glVertex2f(-0.7f, -0.9f);
+        
+        glColor3f(1.0f, 0.5f, 0.0f);
+        glVertex2f(-0.9f, 0.0f);
+
+        glColor3f(1.0f, 0.5f, 0.0f);
+        glVertex2f(0.0f, 0.8f);
+
+        glColor3f(1.0f, 0.5f, 0.0f);
+        glVertex2f(0.9f, 0.0f);
+
+        glColor3f(1.0f, 0.5f, 0.0f);
+        glVertex2f(0.7f, -0.9f);
+
+        glEnd();
+        glPopMatrix();
+
+        glPushMatrix();
+
+        glBegin(GL_TRIANGLES);
+
+        glColor3f(1.0f, 0.5f, 0.0f);
+        glVertex2f(0.0f, 0.0f);
+
+        glColor3f(1.0f, 0.5f, 0.0f);
+        glVertex2f(-0.7f, -0.9f);
+
+        glColor3f(1.0f, 0.5f, 0.0f);
+        glVertex2f(0.7f, -0.9f);
+
+        glEnd();
+        glPopMatrix();
+
+        // Pumpkin Eyes
+        glPushMatrix();
+
+        glBegin(GL_TRIANGLES);
+
+        glColor3f(0.0f, 0.0f, 0.0f);
+        glVertex2f(-0.5f, 0.1f);
+
+        glColor3f(0.0f, 0.0f, 0.0f);
+        glVertex2f(-0.3f, 0.4f);
+
+        glColor3f(0.0f, 0.0f, 0.0f);
+        glVertex2f(-0.1f, 0.1f);
+
+        glColor3f(0.0f, 0.0f, 0.0f);
+        glVertex2f(0.1f, 0.1f);
+
+        glColor3f(0.0f, 0.0f, 0.0f);
+        glVertex2f(0.3f, 0.4f);
+
+        glColor3f(0.0f, 0.0f, 0.0f);
+        glVertex2f(0.5f, 0.1f);
+
+        glEnd();
+        glPopMatrix();
+
+        // Nose
+        glPushMatrix();
+
+        glBegin(GL_TRIANGLES);
+
+        glColor3f(0.0f, 0.0f, 0.0f);
+        glVertex2f(-0.1f, -0.3f);
+
+        glColor3f(0.0f, 0.0f, 0.0f);
+        glVertex2f(0.0f, -0.1f);
+
+        glColor3f(0.0f, 0.0f, 0.0f);
+        glVertex2f(0.1f, -0.3f);
+
+        glEnd();
+        glPopMatrix();
+
+        //Mouth 
+        glPushMatrix();
+
+        glBegin(GL_QUADS);
+
+        glColor3f(0.0f, 0.0f, 0.0f);
+        glVertex2f(-0.4f, -0.4f);
+
+        glColor3f(0.0f, 0.0f, 0.0f);
+        glVertex2f(0.4f, -0.4f);
+
+        glColor3f(0.0f, 0.0f, 0.0f);
+        glVertex2f(0.3f, -0.8f);
+
+        glColor3f(0.0f, 0.0f, 0.0f);
+        glVertex2f(-0.3f, -0.8f);
+
+        glEnd();
+        glPopMatrix();
+        
+        //Stem
+        glPushMatrix();
+
+        glBegin(GL_QUADS);
+
+        glColor3f(0.0f, 0.1f, 0.0f);
+        glVertex2f(-0.1f, 1.0f);
+
+        glColor3f(0.0f, 0.1f, 0.0f);
+        glVertex2f(0.1f, 1.0f);
+
+        glColor3f(0.0f, 0.1f, 0.0f);
+        glVertex2f(0.2f, 0.65f);
+
+        glColor3f(0.0f, 0.1f, 0.0f);
+        glVertex2f(-0.2f, 0.65f);
+
+        glEnd();
         glPopMatrix();
         // post-render
         renderer.EndFrame();
