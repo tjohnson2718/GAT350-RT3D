@@ -4,7 +4,8 @@
 #include "Model.h"
 #include "Text.h"
 #include "Texture.h"
-
+#include "Shader.h"
+#include "Program.h"
 
 #include <glad/include/glad/glad.h>
 #include <SDL2-2.28.4/include/SDL.h>
