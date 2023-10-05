@@ -1,5 +1,6 @@
 #pragma once
 #include "Resource.h"
+#include "Core/Logger.h"
 #include "Framework/Singleton.h"
 #include <map>
 #include <memory>

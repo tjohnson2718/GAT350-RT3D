@@ -5,6 +5,7 @@
 #include "Text.h"
 #include "Texture.h"
 
+
 #include <glad/include/glad/glad.h>
 #include <SDL2-2.28.4/include/SDL.h>
 #include <string>

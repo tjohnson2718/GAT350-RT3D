@@ -187,6 +187,8 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\..\..\Users\tjohnson\Downloads\Program.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\Users\tjohnson\Downloads\Shader.cpp" />
     <ClCompile Include="..\..\ThirdParty\glad\src\glad.c" />
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="Model.cpp" />
@@ -195,6 +197,8 @@
     <ClCompile Include="Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\..\..\Users\tjohnson\Downloads\Program.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\..\Users\tjohnson\Downloads\Shader.h" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="Renderer.h" />
