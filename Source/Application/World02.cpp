@@ -40,42 +40,65 @@ namespace nc
         glUseProgram(program);
 
         // vertex data
-        float positionData[] = {
+        float positionData1[] = {
            -0.8f, -0.8f, 0.0f,
-            0.8f, -0.8f, 0.0f,
+            -0.8f, 0.8f, 0.0f,
             0.0f,  0.8f, 0.0f
         };
 
-        float colorData[] =
+        float colorData1[] =
         {
-            1.0f, 0.0f, 0.0f,
-            0.0f, 1.0f, 0.0f,
-            0.0f, 0.0f, 1.0f
+            1.0f, 0.5f, 0.3f,
+            0.7f, -1.0f, 0.5f,
+            0.8f, 0.8f, 0.8f
         };
 
-        GLuint vbo[2];
-        glGenBuffers(2, vbo);
+        float positionData2[] =
+        {
+            0.0f, 0.8f, 0.0f,
+            0.0f, -0.8f, 0.0f,
+            -0.8f, -0.8f, 0.0f
+        };
 
-        // position
+        float colorData2[] =
+        {
+            1.0f, 0.5f, 0.3f,
+            0.7f, -1.0f, 0.5f,
+            0.8f, 0.8f, 0.8f
+        };
+
+        GLuint vbo[3];
+        glGenBuffers(3, vbo);
+
+        // position 1
         glBindBuffer(GL_ARRAY_BUFFER, vbo[0]);
-        glBufferData(GL_ARRAY_BUFFER, sizeof(positionData), positionData, GL_STATIC_DRAW);
+        glBufferData(GL_ARRAY_BUFFER, sizeof(positionData1), positionData1, GL_STATIC_DRAW);
 
-        // color
+        // color 1
         glBindBuffer(GL_ARRAY_BUFFER, vbo[1]);
-        glBufferData(GL_ARRAY_BUFFER, sizeof(colorData), colorData, GL_STATIC_DRAW);
+        glBufferData(GL_ARRAY_BUFFER, sizeof(colorData1), colorData1, GL_STATIC_DRAW);
+
+        // position 2
+        glBindBuffer(GL_ARRAY_BUFFER, vbo[2]);
+        glBufferData(GL_ARRAY_BUFFER, sizeof(positionData2), positionData2, GL_STATIC_DRAW);
 
         glGenVertexArrays(1, &m_vao);
         glBindVertexArray(m_vao);
 
-        // position
+        // position 1
         glEnableVertexAttribArray(0);
         glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
         glBindVertexBuffer(0, vbo[0], 0, sizeof(GLfloat) * 3);
 
-        // color
+        // color 1
         glEnableVertexAttribArray(1);
         glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, 0);
         glBindVertexBuffer(1, vbo[1], 0, sizeof(GLfloat) * 3);
+
+        // position 2
+        glEnableVertexAttribArray(2);
+        glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 0, 0);
+        glBindVertexBuffer(2, vbo[2], 0, sizeof(GLfloat) * 3);
 
         return true;
     }
@@ -107,6 +130,7 @@ namespace nc
         // render
         glBindVertexArray(m_vao);
         glDrawArrays(GL_TRIANGLES, 0, 3);
+        glDrawArrays(GL_TRIANGLES, 2, 3);
 
         // post-render
         renderer.EndFrame();
