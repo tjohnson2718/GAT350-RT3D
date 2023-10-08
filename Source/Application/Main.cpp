@@ -7,8 +7,26 @@
 
 using namespace std;
 
+std::string revearsedString(std::string& str, int index = 0)
+{
+	if (index == str.length())
+	{
+		return "";
+	}
+	else
+	{
+		return revearsedString(str, index + 1) + str[index];
+	}
+}
+
+
 int main(int argc, char* argv[])
 {
+	std::string inputString = "Hello, World!";
+	std::string revearsedSt = revearsedString(inputString);
+	std::cout << "Original String: " << inputString << endl;
+	std::cout << "Revearsed String: " << revearsedSt << endl;
+
 	INFO_LOG("Initialize Engine...")
 
 	nc::MemoryTracker::Initialize();
