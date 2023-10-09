@@ -17,8 +17,8 @@ namespace nc
 	private:
 		float m_angle = 0;
 		float m_time;
-		vec2 m_position;
-		//std::vector<vec2> m_positions;
+		float m_speed = 5;
+		glm::vec3 m_position;
 
 		GLuint m_vao;
 		res_t<Program> m_program;
