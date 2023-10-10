@@ -1,51 +1,56 @@
 #include "GUI.h"
 #include "Renderer.h"
-#include "Core/Logger.h"
+#include "Framework/Engine.h"
 
-namespace kiko
+namespace nc
 {
-	GUI g_gui;
-
-	bool GUI::Initialize(Renderer& renderer)
+	bool Gui::Initialize()
 	{
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
-		ImGuiIO& io = ImGui::GetIO(); (void)io;
-		// Setup Dear ImGui style
+		ImGuiIO& io = ImGui::GetIO();
+
+		ImGui_ImplSDL2_InitForOpenGL(ENGINE.GetSystem<Renderer>()->m_window, ENGINE.GetSystem<Renderer>()->m_context);
+		const char* glsl_version = "#version 430";
+		ImGui_ImplOpenGL3_Init(glsl_version);
+
 		ImGui::StyleColorsDark();
-
-		// Setup Platform/Renderer backends
-		if (!ImGui_ImplSDL2_InitForSDLRenderer(renderer.m_window, renderer.m_renderer))
-		{
-			ERROR_LOG("Could not create imgui.");
-			return false;
-		}
-
-		if (!ImGui_ImplSDLRenderer_Init(renderer.m_renderer))
-		{
-			ERROR_LOG("Could not create imgui.");
-			return false;
-		}
 
 		return true;
 	}
-	void GUI::Shutdown()
+
+	void Gui::Shutdown()
 	{
-		ImGui_ImplSDLRenderer_Shutdown();
+		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplSDL2_Shutdown();
 		ImGui::DestroyContext();
 	}
 
-	void GUI::BeginFrame()
+	void Gui::Update()
 	{
-		ImGui_ImplSDLRenderer_NewFrame();
+		//
+	}
+
+	void Gui::BeginFrame()
+	{
+		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplSDL2_NewFrame();
 		ImGui::NewFrame();
 	}
 
-	void GUI::Draw()
+	void Gui::EndFrame()
+	{
+		ImGui::EndFrame();
+	}
+
+	void Gui::Draw()
 	{
 		ImGui::Render();
-		ImGui_ImplSDLRenderer_RenderDrawData(ImGui::GetDrawData());
+		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+	}
+
+	void Gui::ProcessEvent(SDL_Event& event)
+	{
+		ImGui_ImplSDL2_ProcessEvent(&event);
 	}
 }

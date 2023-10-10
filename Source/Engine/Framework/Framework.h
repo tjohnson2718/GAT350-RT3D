@@ -14,7 +14,6 @@
 #include "Components/EnginePhysicsComponent.h"
 
 #include "Components/CollisionComponent.h"
-#include "Components/CircleCollisionComponent.h"
 
 #include "Factory.h"
 #include "Resource/ResourceManager.h"

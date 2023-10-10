@@ -2,10 +2,10 @@
 #include "Framework/System.h"
 #include "Font.h"
 #include "Model.h"
-#include "Text.h"
 #include "Texture.h"
 #include "Shader.h"
 #include "Program.h"
+#include "Gui.h"
 
 #include <glad/include/glad/glad.h>
 #include <SDL2-2.28.4/include/SDL.h>
@@ -34,16 +34,11 @@ namespace nc
 		void DrawPoint(int x, int y);
 		void DrawPoint(float x, float y);
 
-		void DrawTexture(class Texture* texture, float x, float y, float angle = 0.0f);
-		void DrawTexture(class Texture* texture, const Transform& transform);
-		void DrawTexture(class Texture* texture, const Rect& source, const Transform& transform);
-		void DrawTexture(class Texture* texture, const Rect& source, const Transform& transform, const vec2& origin, bool flipH);
-
 		int GetWidth() const { return m_width; }
 		int GetHeight() const { return m_height; }
 
-		friend class Text;
 		friend class Texture;
+		friend class Gui;
 
 	private:
 		int m_width = 0;

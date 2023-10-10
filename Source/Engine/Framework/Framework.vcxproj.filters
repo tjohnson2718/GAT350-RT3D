@@ -28,9 +28,6 @@
     <ClCompile Include="Components\EnginePhysicsComponent.cpp">
       <Filter>Source\Components</Filter>
     </ClCompile>
-    <ClCompile Include="Components\CircleCollisionComponent.cpp">
-      <Filter>Source\Components</Filter>
-    </ClCompile>
     <ClCompile Include="Object.cpp">
       <Filter>Source</Filter>
     </ClCompile>
@@ -79,9 +76,6 @@
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="Components\CollisionComponent.h">
-      <Filter>Source\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="Components\CircleCollisionComponent.h">
       <Filter>Source\Components</Filter>
     </ClInclude>
     <ClInclude Include="Singleton.h">

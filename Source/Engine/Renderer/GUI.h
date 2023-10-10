@@ -1,19 +1,27 @@
 #pragma once
-#include <imgui/imgui.h>
+#include "Framework/System.h"
 #include <imgui/imgui_impl_sdl.h>
-#include <imgui/imgui_impl_sdlrenderer.h>
+#include <imgui/imgui_impl_opengl3.h>
+#include <SDL2-2.28.4/include/SDL.h>
 
-namespace kiko
+namespace nc
 {
-	class GUI
+	class Renderer;
+
+	class Gui : public ISystem
 	{
 	public:
-		bool Initialize(class Renderer& renderer);
-		void Shutdown();
+		Gui() = default;
+		~Gui() = default;
+
+		bool Initialize() override;
+		void Shutdown() override;
+		void Update() override;
 
 		void BeginFrame();
+		void EndFrame();
 		void Draw();
-	};
 
-	extern GUI g_gui;
+		void ProcessEvent(SDL_Event& event);
+	};
 }
