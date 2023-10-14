@@ -55,6 +55,9 @@
     <ClCompile Include="..\..\ThirdParty\imgui\imgui_widgets.cpp">
       <Filter>Source\ImGui</Filter>
     </ClCompile>
+    <ClCompile Include="VertexBuffer.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Renderer.h">
@@ -76,6 +79,9 @@
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="Gui.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexBuffer.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
