@@ -197,6 +197,7 @@
     <ClCompile Include="..\..\ThirdParty\imgui\imgui_widgets.cpp" />
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="Gui.cpp" />
+    <ClCompile Include="Material.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="Renderer.cpp" />
@@ -207,6 +208,7 @@
   <ItemGroup>
     <ClInclude Include="Font.h" />
     <ClInclude Include="Gui.h" />
+    <ClInclude Include="Material.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="Program.h" />
     <ClInclude Include="Renderer.h" />
