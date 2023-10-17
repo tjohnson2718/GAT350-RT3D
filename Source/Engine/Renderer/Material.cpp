@@ -55,7 +55,7 @@ namespace nc
 	{
 		ImGui::Begin("Material");
 		ImGui::ColorEdit4("Color", &color[0]);
-		ImGui::DragFloat2("Tiling", glm::value_ptr(tiling));
+		ImGui::DragFloat2("Tiling", glm::value_ptr(tiling), 0.1f);
 		ImGui::DragFloat2("Offset", glm::value_ptr(offset), 0.1f);
 		ImGui::End();
 	}

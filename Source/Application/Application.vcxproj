@@ -135,6 +135,7 @@
     <ClCompile Include="World01.cpp" />
     <ClCompile Include="World02.cpp" />
     <ClCompile Include="World03.cpp" />
+    <ClCompile Include="World04.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Engine\Core\Core.vcxproj">
@@ -154,8 +155,12 @@
     <ClInclude Include="World01.h" />
     <ClInclude Include="World02.h" />
     <ClInclude Include="World03.h" />
+    <ClInclude Include="World04.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\Build\Assets\Shaders\lit_texture.frag" />
+    <None Include="..\..\Build\Assets\Shaders\lit_texture.prog" />
+    <None Include="..\..\Build\Assets\Shaders\lit_texture.vert" />
     <None Include="..\..\Build\Assets\Shaders\unlit_color.frag" />
     <None Include="..\..\Build\Assets\Shaders\unlit_color.prog" />
     <None Include="..\..\Build\Assets\Shaders\unlit_color.vert" />

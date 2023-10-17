@@ -22,6 +22,9 @@
     <ClCompile Include="World03.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="World04.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World01.h">
@@ -31,6 +34,9 @@
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="World03.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="World04.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
@@ -57,6 +63,15 @@
       <Filter>Shaders</Filter>
     </None>
     <None Include="..\..\Build\Assets\Shaders\unlit_multitexture.prog">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\lit_texture.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\lit_texture.prog">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\lit_texture.vert">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>

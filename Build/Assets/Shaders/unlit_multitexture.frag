@@ -16,7 +16,7 @@ void main()
 	vec4 texcolor1 = texture(tex1, (texcoord * tiling) + offset);
 	vec4 texcolor2 = texture(tex2, (texcoord * tiling) + offset);
 	
-	vec4 texcolor = mix(texcolor1 * texcolor2)
+	vec4 texcolor = mix(texcolor1 * texcolor2);
 
 	ocolor = texcolor;
 }
