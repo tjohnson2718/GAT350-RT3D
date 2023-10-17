@@ -1,5 +1,5 @@
 #pragma once
-#include "Renderer.h"
+#include <glad/include/glad/glad.h>
 #include "Framework/Resource/Resource.h"
 #include <vector>
 

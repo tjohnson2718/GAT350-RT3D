@@ -20,10 +20,7 @@ namespace nc
 		float m_speed = 5;
 
 		Transform m_transform;
-
-		res_t<VertexBuffer> m_vertexBuffer;
-		res_t<Program> m_program;
-		res_t<Texture> m_texture;
-		res_t<Material> m_material;
+		res_t<Model> m_model;
+		//res_t<Material> m_material;
 	};
 }

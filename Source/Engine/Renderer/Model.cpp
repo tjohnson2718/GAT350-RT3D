@@ -1,74 +1,110 @@
 #include "Model.h"
-#include "Renderer.h"
-#include <sstream>
+#include "Core/Core.h"
+#include "Framework/Resource/ResourceManager.h"
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
+
 
 namespace nc
 {
 	bool Model::Create(std::string filename, ...)
 	{
+		// TODO load json model file
+
 		return Load(filename);
 	}
 
 	bool Model::Load(const std::string& filename)
 	{
-		std::string buffer;
-		if (!nc::readFile(filename, buffer))
+		Assimp::Importer importer;
+		const aiScene* scene = importer.ReadFile(filename, aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_CalcTangentSpace);
+
+		if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
 		{
-			WARNING_LOG("Could not load model: " << filename);
+			WARNING_LOG("Could not load assimp file %s" << importer.GetErrorString());
 			return false;
 		}
 
-		std::istringstream stream(buffer);
-
-		// read color
-		stream >> m_color;
-
-		// read number of points
-		std::string line;
-		std::getline(stream, line);
-		int numPoints = std::stoi(line);
-
-		// read vector2 points
-		for (int i = 0; i < numPoints; i++)
-		{
-			vec2 point;
-			stream >> point;
-
-			m_points.push_back(point);
-		}
+		ProcessNode(scene->mRootNode, scene);
 
 		return true;
 	}
 
-
-	void Model::Draw(Renderer& renderer, const vec2& position, float rotation, float scale)
+	void Model::Draw(GLenum primitive)
 	{
-		if (m_points.empty()) return;
+		m_material->Bind();
+		m_vertexBuffer->Draw(primitive);
+	}
 
-		renderer.SetColor(Color::ToInt(m_color.r), Color::ToInt(m_color.g), Color::ToInt(m_color.b), Color::ToInt(m_color.a));
-		for (int i = 0; i < m_points.size() - 1; i++)
+	void Model::ProcessNode(aiNode* node, const aiScene* scene)
+	{
+		// process the current node meshes
+		for (unsigned int i = 0; i < node->mNumMeshes; i++)
 		{
-			vec2 p1 = (m_points[i] * scale).Rotate(rotation) + position;
-			vec2 p2 = (m_points[i + 1] * scale).Rotate(rotation) + position;
-						
-			renderer.DrawLine(p1.x, p1.y, p2.x, p2.y);
+			aiMesh* mesh = scene->mMeshes[node->mMeshes[i]];
+			ProcessMesh(mesh, scene);
+		}
+		// process the current node children
+		for (unsigned int i = 0; i < node->mNumChildren; i++)
+		{
+			ProcessNode(node->mChildren[i], scene);
 		}
 	}
 
-	void Model::Draw(Renderer& renderer, const Transform& transform)
+	void Model::ProcessMesh(aiMesh* mesh, const aiScene* scene)
 	{
-	}
+		std::vector<vertex_t> vertices;
 
-	float Model::GetRadius()
-	{
-		if (m_radius) return m_radius;
-
-		for (auto point : m_points)
+		// get model vertex attributes
+		for (size_t i = 0; i < mesh->mNumVertices; i++)
 		{
-			float length = point.Length();
-			m_radius = Max(m_radius, length);
+			vertex_t vertex;
+
+			vertex.position = glm::vec3{ mesh->mVertices[i].x, mesh->mVertices[i].y, mesh->mVertices[i].z };
+			vertex.normal = glm::vec3{ mesh->mNormals[i].x, mesh->mNormals[i].y, mesh->mNormals[i].z };
+
+			if (mesh->mTangents)
+			{
+				vertex.tangent = glm::vec3{ mesh->mTangents[i].x, mesh->mTangents[i].y, mesh->mTangents[i].z };
+			}
+			else
+			{
+				vertex.tangent = { 0, 0, 0 };
+			}
+
+			if (mesh->mTextureCoords[0])
+			{
+				vertex.texcoord = { mesh->mTextureCoords[0][i].x, mesh->mTextureCoords[0][i].y };
+			}
+			else
+			{
+				vertex.texcoord = { 0, 0 };
+			}
+
+			vertices.push_back(vertex);
 		}
 
-		return m_radius;
+		// create vertex buffer and attributes
+		m_vertexBuffer = std::make_shared<VertexBuffer>();
+		m_vertexBuffer->CreateVertexBuffer((GLsizei)(sizeof(vertex_t) * vertices.size()), (GLsizei)vertices.size(), vertices.data());
+		m_vertexBuffer->SetAttribute(0, 3, sizeof(vertex_t), 0);
+		m_vertexBuffer->SetAttribute(1, 2, sizeof(vertex_t), offsetof(vertex_t, texcoord));
+		m_vertexBuffer->SetAttribute(2, 3, sizeof(vertex_t), offsetof(vertex_t, normal));
+		m_vertexBuffer->SetAttribute(3, 3, sizeof(vertex_t), offsetof(vertex_t, tangent));
+
+		// get model index vertices
+		std::vector<GLuint> indices;
+		for (size_t i = 0; i < mesh->mNumFaces; i++)
+		{
+			aiFace face = mesh->mFaces[i];
+			for (size_t j = 0; j < face.mNumIndices; j++)
+			{
+				indices.push_back(face.mIndices[j]);
+			}
+		}
+
+		// create index vertex buffer
+		m_vertexBuffer->CreateIndexBuffer(GL_UNSIGNED_INT, (GLsizei)indices.size(), indices.data());
 	}
 }

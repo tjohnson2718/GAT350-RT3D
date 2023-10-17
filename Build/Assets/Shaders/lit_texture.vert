@@ -14,7 +14,6 @@ uniform mat4 projection;
 
 void main()
 {
-	
 	otexcoord = vtexcoord;
 	onormal = vnormal;
 
