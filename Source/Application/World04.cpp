@@ -27,6 +27,12 @@ namespace nc
         ImGui::DragFloat3("Scale", &m_transform.scale[0]);
         ImGui::End();
 
+        ImGui::Begin("Light");
+        ImGui::DragFloat3("Position", glm::value_ptr(m_lightPosition));
+        ImGui::ColorEdit3("Color", glm::value_ptr(m_lightColor));
+
+        ImGui::End();
+
         m_transform.position.x += ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_A) ? m_speed * -dt : 0;
         m_transform.position.x += ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_D) ? m_speed * +dt : 0;
 
@@ -51,8 +57,13 @@ namespace nc
         material->GetProgram()->SetUniform("view", view);
 
         // projection matrix
-        glm::mat4 projection = glm::perspective(glm::radians(70.0f), 800.0f / 600.0f, 0.01f, 100.0f);
+        glm::mat4 projection = glm::perspective(glm::radians(70.0f), ENGINE.GetSystem<Renderer>()->GetWidth() / (float)ENGINE.GetSystem<Renderer>()->GetHeight(), 0.01f, 100.0f);
         material->GetProgram()->SetUniform("projection", projection);
+
+        material->GetProgram()->SetUniform("ambientLight", m_ambientLighting);
+        material->GetProgram()->SetUniform("light.position", m_lightPosition);
+
+        
         
 
 
@@ -65,7 +76,7 @@ namespace nc
         renderer.BeginFrame();
 
         // render
-        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+        //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
         m_model->Draw();
         ENGINE.GetSystem<Gui>()->Draw();
 

@@ -15,7 +15,7 @@ namespace nc
 		return Load(filename);
 	}
 
-	bool Model::Load(const std::string& filename)
+	bool Model::Load(const std::string& filename, const glm::vec3& translate, const glm::vec3& rotation, const glm::vec3& scale)
 	{
 		Assimp::Importer importer;
 		const aiScene* scene = importer.ReadFile(filename, aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_CalcTangentSpace);
