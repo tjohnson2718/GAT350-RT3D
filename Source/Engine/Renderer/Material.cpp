@@ -41,9 +41,9 @@ namespace nc
 	void Material::Bind()
 	{
 		m_program->Use();
-		m_program->SetUniform("color", color);
-		m_program->SetUniform("tiling", tiling);
-		m_program->SetUniform("offset", offset);
+		m_program->SetUniform("material.color", color);
+		m_program->SetUniform("material.tiling", tiling);
+		m_program->SetUniform("material.offset", offset);
 
 		for (size_t i = 0; i < m_textures.size(); i++)
 		{
