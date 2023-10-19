@@ -30,8 +30,8 @@ namespace nc
 		res_t<Material> GetMaterial() { return m_material; }
 
 	private:
-		void ProcessNode(aiNode* node, const aiScene* scene);
-		void ProcessMesh(aiMesh* mesh, const aiScene* scene);
+		void ProcessNode(aiNode* node, const aiScene* scene, const glm::mat4& transform);
+		void ProcessMesh(aiMesh* mesh, const aiScene* scene, const glm::mat4& transform);
 
 	private:
 		res_t<VertexBuffer> m_vertexBuffer;
