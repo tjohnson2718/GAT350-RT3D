@@ -7,7 +7,6 @@ in layout(location = 2) vec3 vnormal;
 out layout(location = 0) vec3 oposition;
 out layout(location = 1) vec3 onormal;
 out layout(location = 2) vec2 otexcoord;
-//out layout(location = 3) vec4 ocolor;
 
 uniform mat4 model;
 uniform mat4 view;
