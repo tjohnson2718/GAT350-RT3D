@@ -33,7 +33,7 @@ namespace nc
 	class Logger : public Singleton<Logger>
 	{
 	public:
-		Logger(LogLevel logLevel = LogLevel::Info, std::ostream* ostream = &std::cout, const std::string& filename = "log.txt") :
+		Logger(LogLevel logLevel = LogLevel::Info, std::ostream* ostream = &std::cerr, const std::string& filename = "log.txt") :
 			m_logLevel{ logLevel },
 			m_ostream{ ostream } 
 		{

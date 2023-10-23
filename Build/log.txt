@@ -1,3 +1,2 @@
 INFO: Main.cpp(32) Initialize Engine...
 WARNING: Program.cpp(165) Could not find uniform location: ambientLight
-WARNING: Program.cpp(165) Could not find uniform location: light.position

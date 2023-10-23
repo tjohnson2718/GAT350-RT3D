@@ -67,11 +67,11 @@ namespace nc
 			vertex_t vertex;
 
 			vertex.position = transform * glm::vec4{ mesh->mVertices[i].x, mesh->mVertices[i].y, mesh->mVertices[i].z, 1 };
-			vertex.normal = transform * glm::vec4{ mesh->mNormals[i].x, mesh->mNormals[i].y, mesh->mNormals[i].z, 0 };
+			vertex.normal = glm::normalize(transform * glm::vec4{ mesh->mNormals[i].x, mesh->mNormals[i].y, mesh->mNormals[i].z, 0 });
 
 			if (mesh->mTangents)
 			{
-				vertex.tangent = transform * glm::vec4{ mesh->mTangents[i].x, mesh->mTangents[i].y, mesh->mTangents[i].z, 0 };
+				vertex.tangent = glm::normalize(transform * glm::vec4{ mesh->mTangents[i].x, mesh->mTangents[i].y, mesh->mTangents[i].z, 0 });
 			}
 			else
 			{

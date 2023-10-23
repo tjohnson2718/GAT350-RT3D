@@ -4,9 +4,24 @@
 #include "Core/Math/Transform.h"
 #include <vector>
 
-
 namespace nc
 {
+	struct light_t
+	{
+		enum eType
+		{
+			Point,
+			Directional,
+			Spot
+		};
+
+		eType type;
+		glm::vec3 position;
+		glm::vec3 direction;
+		glm::vec3 color;
+		float cutoff;
+	};
+
 	class World04 : public World
 	{
 	public:
@@ -19,9 +34,9 @@ namespace nc
 		float m_time;
 		float m_speed = 5;
 
-		glm::vec3 m_lightPosition{ 0.0f, 0.8f, 0.0f };
-		glm::vec3 m_lightColor{ 1.0f, 1.0f, 1.0f };
-		glm::vec3 m_ambientLighting{ 0.2f, 0.2f, 0.2f };
+		light_t m_light;
+		
+		glm::vec3 m_ambientLighting{ 0.2 };
 
 		Transform m_transform;
 		res_t<Model> m_model;
