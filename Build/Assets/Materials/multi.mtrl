@@ -1,0 +1,12 @@
+{
+  "program":"shaders/multi_lit_texture.prog",
+  "textures": [ "textures/color_grid.png" ],
+  "color":[
+      1,
+      1,
+      1,
+      1
+    ],
+  "tiling": [ 1, 1 ],
+  "offset": [ 0, 0 ]
+}
