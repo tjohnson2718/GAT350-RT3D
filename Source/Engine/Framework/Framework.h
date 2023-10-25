@@ -8,7 +8,8 @@
 #include "Components/Component.h"
 
 #include "Components/RenderComponent.h"
-#include "Components/ModelRenderComponent.h"
+#include "Components/ModelComponent.h"
+#include "Components/LightComponent.h"
 
 #include "Components/PhysicsComponent.h"
 #include "Components/EnginePhysicsComponent.h"

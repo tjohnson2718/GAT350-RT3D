@@ -28,6 +28,9 @@
     <ClCompile Include="World04.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="World05.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World01.h">
@@ -40,6 +43,9 @@
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="World04.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="World05.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
@@ -96,6 +102,9 @@
       <Filter>Materials</Filter>
     </None>
     <None Include="..\..\Build\Assets\Materials\quad.mtrl">
+      <Filter>Materials</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\squirrel.mtrl">
       <Filter>Materials</Filter>
     </None>
   </ItemGroup>
