@@ -1,0 +1,21 @@
+{
+	"actors": [
+		{
+			"type": "Actor",
+			"name": "actor1",
+			"persistent": true,
+			"transform": {
+				"position": [ 0, 0, 0 ],
+				"scale": [ 1, 1, 1 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "models/squirrel.glb",
+					"materialName": "materials/squirrel.mtrl"
+				}
+			]
+		}
+	]
+}

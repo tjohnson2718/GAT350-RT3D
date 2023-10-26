@@ -6,8 +6,7 @@
 #include <string>
 
 #define CREATE_CLASS(class) nc::Factory::Instance().Create<nc::class>(#class);
-#define CREATE_CLASS_BASE(classbase, class) nc::Factory::Instance().Create<nc::classbase>(#class);
-#define INSTANTIATE(class) nc::Factory::Instance().Create<nc::Actor>(#class);
+#define CREATE_CLASS_BASE(classbase, classname) nc::Factory::Instance().Create<nc::classbase>(classname);
 
 namespace nc
 {
