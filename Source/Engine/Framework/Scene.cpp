@@ -1,5 +1,6 @@
 #include "Scene.h"
 #include "Framework/Components/LightComponent.h"
+#include "Framework/Components/CameraComponent.h"
 
 namespace nc
 {
@@ -61,6 +62,26 @@ namespace nc
 		for (auto& actor : m_actors)
 		{
 			if (actor->active) actor->Draw(renderer);
+		}
+
+		// get camera component
+		CameraComponent* camera = nullptr;
+		for (auto& actor : m_actors)
+		{
+			if (!actor->active) continue;
+
+			camera = actor->GetComponent<CameraComponent>();
+			if (camera) break;
+			//<if camera is valid, break out of for loop>
+			// I may have done this wrong
+		}
+
+		//auto programs = ResourceManager::Instance().GetAllOfType<Program>();
+		for (auto& program : programs)
+		{
+			program->Use();
+
+			if (camera) camera->SetProgram(program);
 		}
 	}
 
