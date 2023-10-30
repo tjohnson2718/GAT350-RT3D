@@ -9,26 +9,15 @@
 
 using namespace std;
 
-std::string revearsedString(std::string& str, int index = 0)
-{
-	if (index == str.length())
-	{
-		return "";
-	}
-	else
-	{
-		return revearsedString(str, index + 1) + str[index];
-	}
-}
-
-
 int main(int argc, char* argv[])
 {
-	// Recursion Practice
-	std::string inputString = "Hello, World!";
-	std::string revearsedSt = revearsedString(inputString);
-	std::cout << "Original String: " << inputString << endl;
-	std::cout << "Revearsed String: " << revearsedSt << endl;
+	std::string strOne = "Hello";
+	std::string strTwo = "HeLLo";
+
+	cout << nc::StringUtils::ToUpperCase(strOne) << 
+		"\n" + nc::StringUtils::ToLowerCase(strOne) << 
+		"\n" + nc::StringUtils::IsEqualIgnoreUpperCase(strOne, strTwo) <<
+		"\n" + nc::StringUtils::CreateUnique(strOne);
 
 	INFO_LOG("Initialize Engine...")
 
