@@ -5,15 +5,15 @@
 			"name": "actor1",
 			"persistent": true,
 			"transform": {
-				"position": [ 0, 0, 0 ],
+				"position": [ 0, 0, 1 ],
 				"scale": [ 1, 1, 1 ],
 				"rotation": [ 0, 0, 0 ]
 			},
 			"components": [
 				{
 					"type": "ModelComponent",
-					"modelName": "models/cube.obj",
-					"materialName": "materials/phong.mtrl"
+					"modelName": "models/ogre.obj",
+					"materialName": "materials/ogre.mtrl"
 				}
 			]
 		}
