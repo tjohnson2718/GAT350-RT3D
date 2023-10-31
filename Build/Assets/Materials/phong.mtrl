@@ -1,0 +1,24 @@
+{
+    "program": "shaders/lit_phong.prog",
+    "albedoTexture": "textures/lava_diffuse.png",
+    "specularTexture": "textures/lava_specular.png",
+    "emissiveTexture": "textures/lava_emissive.png",
+    "albedo": [
+        1,
+        1,
+        1
+    ],
+    "specular": [
+        0.4,
+        0.4,
+        0.4
+    ],
+    "emissive": [
+        0,
+        0,
+        0
+    ],
+    "shininess": 2,
+    "tiling": [ 1, 1 ],
+    "offset": [ 0, 0 ]
+}

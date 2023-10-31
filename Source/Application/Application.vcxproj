@@ -166,9 +166,13 @@
   <ItemGroup>
     <None Include="..\..\Build\Assets\Materials\grid.mtrl" />
     <None Include="..\..\Build\Assets\Materials\multi.mtrl" />
+    <None Include="..\..\Build\Assets\Materials\phong.mtrl" />
     <None Include="..\..\Build\Assets\Materials\quad.mtrl" />
     <None Include="..\..\Build\Assets\Materials\squirrel.mtrl" />
     <None Include="..\..\Build\Assets\Scenes\scene.json" />
+    <None Include="..\..\Build\Assets\Shaders\lit_phong.frag" />
+    <None Include="..\..\Build\Assets\Shaders\lit_phong.prog" />
+    <None Include="..\..\Build\Assets\Shaders\lit_phong.vert" />
     <None Include="..\..\Build\Assets\Shaders\lit_texture.frag" />
     <None Include="..\..\Build\Assets\Shaders\lit_texture.prog" />
     <None Include="..\..\Build\Assets\Shaders\lit_texture.vert" />
