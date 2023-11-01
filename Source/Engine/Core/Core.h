@@ -7,7 +7,7 @@
 //#include "Memory.h"
 #include "Time.h"
 
-#include "Core/StringUtils.h"
+#include "StringUtils.h"
 
 #include "Math/Color.h"
 #include "Math/Rect.h"

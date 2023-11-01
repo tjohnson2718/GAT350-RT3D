@@ -11,32 +11,7 @@ namespace nc
         m_scene->Load("scenes/scene.json");
         m_scene->Initialize();
 
-        /*
-        {
-            auto actor = CREATE_CLASS(Actor);
-            actor->name = "actor1";
-            actor->transform.position = glm::vec3{ 0, 0, 0 };
-            auto modelComponent = CREATE_CLASS(ModelComponent);
-            modelComponent->model = std::make_shared<Model>();
-            modelComponent->model->SetMaterial(GET_RESOURCE(Material, "materials/squirrel.mtrl"));
-            modelComponent->model->Load("models/squirrel.glb", glm::vec3{ 0, -0.7f, 0 }, glm::vec3{ 0 }, glm::vec3{ 0.4f });
-            actor->AddComponent(std::move(modelComponent));
-            m_scene->Add(std::move(actor));
-        }
-
-        {
-            auto actor = CREATE_CLASS(Actor);
-            actor->name = "actor2";
-            actor->transform.position = glm::vec3{ 5, 0, 0 };
-            auto modelComponent = CREATE_CLASS(ModelComponent);
-            modelComponent->model = std::make_shared<Model>();
-            modelComponent->model->SetMaterial(GET_RESOURCE(Material, "materials/squirrel.mtrl"));
-            modelComponent->model->Load("models/squirrel.glb", glm::vec3{ 0, -0.7f, 0 }, glm::vec3{ 0 }, glm::vec3{ 0.4f });
-            actor->AddComponent(std::move(modelComponent));
-            m_scene->Add(std::move(actor));
-        }
-        */ 
-
+        //Light
         {
             auto actor = CREATE_CLASS(Actor);
             actor->name = "light1";
@@ -50,8 +25,9 @@ namespace nc
             lightComponent->outerAngle = 30.0f;
             actor->AddComponent(std::move(lightComponent));
             m_scene->Add(std::move(actor));
-        }
+        } 
 
+        //Camera
         {
             auto actor = CREATE_CLASS(Actor);
             actor->name = "camera1";
@@ -63,7 +39,7 @@ namespace nc
             actor->AddComponent(std::move(cameraComponent));
 
             m_scene->Add(std::move(actor));
-        }
+        } 
 
         return true;
     }

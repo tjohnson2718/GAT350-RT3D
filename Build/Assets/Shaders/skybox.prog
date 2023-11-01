@@ -1,0 +1,4 @@
+{
+	"vertexShader": "shaders/skybox.vert",
+	"fragmentShader": "shaders/cubemap.frag"
+}

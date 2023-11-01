@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
 
 	cout << nc::StringUtils::ToUpperCase(strOne) << 
 		"\n" + nc::StringUtils::ToLowerCase(strOne) << 
-		"\n" + nc::StringUtils::IsEqualIgnoreUpperCase(strOne, strTwo) <<
+		"\n" + nc::StringUtils::IsEqualIgnoreCase(strOne, strTwo) <<
 		"\n" + nc::StringUtils::CreateUnique(strOne);
 
 	INFO_LOG("Initialize Engine...")

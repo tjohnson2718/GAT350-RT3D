@@ -3,6 +3,7 @@
 #include "Font.h"
 #include "Model.h"
 #include "Texture.h"
+#include "Cubemap.h"
 #include "Shader.h"
 #include "Program.h"
 #include "Gui.h"
