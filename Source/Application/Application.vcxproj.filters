@@ -152,5 +152,23 @@
     <None Include="..\..\Build\Assets\Shaders\skybox.vert">
       <Filter>Shaders\Cubemap</Filter>
     </None>
+    <None Include="..\..\Build\Assets\Shaders\reflection.vert">
+      <Filter>Shaders\Cubemap</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\reflection.prog">
+      <Filter>Shaders\Cubemap</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\reflection.mtrl">
+      <Filter>Materials</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\refraction.prog">
+      <Filter>Shaders\Cubemap</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\refraction.vert">
+      <Filter>Shaders\Cubemap</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\refraction.mtrl">
+      <Filter>Materials</Filter>
+    </None>
   </ItemGroup>
 </Project>

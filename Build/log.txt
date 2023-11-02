@@ -4,7 +4,23 @@ INFO: Factory.h(74) Class registered: EnginePhysicsComponent
 INFO: Factory.h(74) Class registered: CameraComponent
 INFO: Factory.h(74) Class registered: Actor
 INFO: Main.cpp(22) Initialize Engine...
+WARNING: Program.cpp(165) Could not find uniform location: material.params
+WARNING: Program.cpp(165) Could not find uniform location: material.albedo
+WARNING: Program.cpp(165) Could not find uniform location: material.specular
+WARNING: Program.cpp(165) Could not find uniform location: material.emissive
+WARNING: Program.cpp(165) Could not find uniform location: material.shininess
+WARNING: Program.cpp(165) Could not find uniform location: material.tiling
+WARNING: Program.cpp(165) Could not find uniform location: material.offset
 WARNING: Program.cpp(165) Could not find uniform location: ambientLight
+WARNING: Program.cpp(165) Could not find uniform location: lights[0].type
+WARNING: Program.cpp(165) Could not find uniform location: lights[0].position
+WARNING: Program.cpp(165) Could not find uniform location: lights[0].direction
+WARNING: Program.cpp(165) Could not find uniform location: lights[0].color
+WARNING: Program.cpp(165) Could not find uniform location: lights[0].intensity
+WARNING: Program.cpp(165) Could not find uniform location: lights[0].range
+WARNING: Program.cpp(165) Could not find uniform location: lights[0].innerAngle
+WARNING: Program.cpp(165) Could not find uniform location: lights[0].outerAngle
+WARNING: Program.cpp(165) Could not find uniform location: numLights
 WARNING: Program.cpp(165) Could not find uniform location: lights[0].type
 WARNING: Program.cpp(165) Could not find uniform location: lights[0].position
 WARNING: Program.cpp(165) Could not find uniform location: lights[0].direction

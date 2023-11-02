@@ -31,8 +31,8 @@
 			"components": [
 				{
 					"type": "ModelComponent",
-					"modelName": "models/ogre.obj",
-					"materialName": "materials/ogre.mtrl"
+					"modelName": "models/sphere.obj",
+					"materialName": "materials/refraction.mtrl"
 				}
 			]
 		}
