@@ -1,6 +1,6 @@
 {
-    "program": "shaders/reflection.prog",
-    "cubemap": "island_cubemap",
+  "program": "shaders/skybox.prog",
+  "cubemap": "island_cubemap",
     "cubemaps": [
         "textures/island_cubemap/posx.jpg",
         "textures/island_cubemap/negx.jpg",

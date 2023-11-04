@@ -13,7 +13,7 @@
 				{
 					"type": "ModelComponent",
 					"modelName": "models/cube.obj",
-					"materialName": "materials/skybox.mtrl",
+					"materialName": "materials/island_skybox.mtrl",
 					"enableDepth": false,
 					"cullface": "front"
 				}
@@ -24,7 +24,7 @@
 			"name": "actor1",
 			"persistent": true,
 			"transform": {
-				"position": [ 0, 0, 1 ],
+				"position": [ 0, 0, -1.5 ],
 				"scale": [ 1, 1, 1 ],
 				"rotation": [ 0, 0, 0 ]
 			},
@@ -33,6 +33,40 @@
 					"type": "ModelComponent",
 					"modelName": "models/sphere.obj",
 					"materialName": "materials/refraction.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "actor2",
+			"persistent": true,
+			"transform": {
+				"position": [ 2, 0, -1.5 ],
+				"scale": [ 1, 1, 1 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "models/sphere.obj",
+					"materialName": "materials/reflection.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "actor3",
+			"persistent": true,
+			"transform": {
+				"position": [ -2, 0, -1.5 ],
+				"scale": [ 1, 1, 1 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "models/sphere.obj",
+					"materialName": "materials/phong.mtrl"
 				}
 			]
 		}

@@ -1,0 +1,12 @@
+{
+  "program": "shaders/skybox.prog",
+  "cubemap": "colosseum_cubemap",
+    "cubemaps": [
+        "textures/colosseum_cubemap/posx.jpg",
+        "textures/colosseum_cubemap/negx.jpg",
+        "textures/colosseum_cubemap/posy.jpg",
+        "textures/colosseum_cubemap/negy.jpg",
+        "textures/colosseum_cubemap/posz.jpg",
+        "textures/colosseum_cubemap/negz.jpg"
+    ]
+}
