@@ -18,6 +18,8 @@
 
 #include "Components/CollisionComponent.h"
 
+#include "Components/CameraController.h"
+
 #include "Factory.h"
 #include "Resource/ResourceManager.h"
 #include "Event/EventManager.h"

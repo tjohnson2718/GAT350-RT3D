@@ -81,5 +81,8 @@
     <ClCompile Include="StringUtils.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="Math\MathUtils.cpp">
+      <Filter>Source\Math</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

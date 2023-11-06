@@ -164,6 +164,7 @@
     <ClCompile Include="FileIO.cpp" />
     <ClCompile Include="Json.cpp" />
     <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="Math\MathUtils.cpp" />
     <ClCompile Include="Math\Transform.cpp" />
     <ClCompile Include="Memory.cpp" />
     <ClCompile Include="StringUtils.cpp" />

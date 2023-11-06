@@ -1,9 +1,10 @@
 INFO: Factory.h(74) Class registered: ModelComponent
 INFO: Factory.h(74) Class registered: LightComponent
 INFO: Factory.h(74) Class registered: EnginePhysicsComponent
+INFO: Factory.h(74) Class registered: CameraController
 INFO: Factory.h(74) Class registered: CameraComponent
 INFO: Factory.h(74) Class registered: Actor
-INFO: Main.cpp(22) Initialize Engine...
+INFO: Main.cpp(24) Initialize Engine...
 WARNING: Program.cpp(165) Could not find uniform location: material.params
 WARNING: Program.cpp(165) Could not find uniform location: material.albedo
 WARNING: Program.cpp(165) Could not find uniform location: material.specular

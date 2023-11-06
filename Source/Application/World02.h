@@ -1,6 +1,6 @@
 #pragma once
 #include "Framework/World.h"
-#include "Core/Math/Vector2.h"
+#include <glm/glm/glm.hpp>
 #include "Renderer/Renderer.h"
 
 
@@ -17,7 +17,7 @@ namespace nc
 	private:
 		float m_angle = 0;
 		float m_time;
-		vec2 m_position;
+		glm::vec2 m_position;
 		//std::vector<vec2> m_positions;
 
 		GLuint m_vao;
