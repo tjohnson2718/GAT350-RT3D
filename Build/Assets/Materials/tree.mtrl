@@ -1,0 +1,12 @@
+{
+    "program": "shaders/unlit_billboard.prog",
+    "albedoTexture": "textures/tree.tga",
+    "albedo": [
+        1,
+        1,
+        1
+    ],
+    "shininess": 2,
+    "tiling": [ 1, 1 ],
+    "offset": [ 0, 0 ]
+}

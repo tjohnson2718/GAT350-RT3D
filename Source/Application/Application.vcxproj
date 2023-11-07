@@ -174,7 +174,9 @@
     <None Include="..\..\Build\Assets\Materials\reflection.mtrl" />
     <None Include="..\..\Build\Assets\Materials\refraction.mtrl" />
     <None Include="..\..\Build\Assets\Materials\skybox.mtrl" />
+    <None Include="..\..\Build\Assets\Materials\sprite.mtrl" />
     <None Include="..\..\Build\Assets\Materials\squirrel.mtrl" />
+    <None Include="..\..\Build\Assets\Materials\tree.mtrl" />
     <None Include="..\..\Build\Assets\Scenes\scene.json" />
     <None Include="..\..\Build\Assets\Shaders\cubemap.frag" />
     <None Include="..\..\Build\Assets\Shaders\lit_phong.frag" />
@@ -196,11 +198,16 @@
     <None Include="..\..\Build\Assets\Shaders\refraction.vert" />
     <None Include="..\..\Build\Assets\Shaders\skybox.prog" />
     <None Include="..\..\Build\Assets\Shaders\skybox.vert" />
+    <None Include="..\..\Build\Assets\Shaders\unlit_billboard.prog" />
+    <None Include="..\..\Build\Assets\Shaders\unlit_billboard.vert" />
     <None Include="..\..\Build\Assets\Shaders\unlit_color.frag" />
     <None Include="..\..\Build\Assets\Shaders\unlit_color.prog" />
     <None Include="..\..\Build\Assets\Shaders\unlit_color.vert" />
     <None Include="..\..\Build\Assets\Shaders\unlit_multitexture.frag" />
     <None Include="..\..\Build\Assets\Shaders\unlit_multitexture.prog" />
+    <None Include="..\..\Build\Assets\Shaders\unlit_sprite.frag" />
+    <None Include="..\..\Build\Assets\Shaders\unlit_sprite.prog" />
+    <None Include="..\..\Build\Assets\Shaders\unlit_sprite.vert" />
     <None Include="..\..\Build\Assets\Shaders\unlit_texture.frag" />
     <None Include="..\..\Build\Assets\Shaders\unlit_texture.prog" />
     <None Include="..\..\Build\Assets\Shaders\unlit_texture.vert" />

@@ -56,7 +56,6 @@ namespace nc
 			GL_FALSE);
 
 		glViewport(0, 0, width, height);
-
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glEnable(GL_DEPTH_TEST);
@@ -69,6 +68,7 @@ namespace nc
 
 	void Renderer::BeginFrame()
 	{
+		glDepthMask(GL_TRUE);
 		glClearColor(0, 0, 0, 1);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
@@ -101,6 +101,16 @@ namespace nc
 	void Renderer::DrawPoint(float x, float y)
 	{
 		SDL_RenderDrawPointF(m_renderer, x, y);
+	}
+
+	void Renderer::SetViewport(int width, int height)
+	{
+		glViewport(0, 0, width, height);
+	}
+
+	void Renderer::ResetViewport(int width, int height)
+	{
+		glViewport(0, 0, m_width, m_height);
 	}
 
 

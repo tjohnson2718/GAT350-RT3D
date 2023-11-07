@@ -25,19 +25,19 @@ namespace nc
             lightComponent->outerAngle = 30.0f;
             actor->AddComponent(std::move(lightComponent));
             m_scene->Add(std::move(actor));
-        } 
+        }
 
         //Camera
         {
             auto actor = CREATE_CLASS(Actor);
             actor->name = "camera1";
             actor->transform.position = glm::vec3{ 0, 0, 3 };
-            actor->transform.rotation = glm::radians(glm::vec3{0, 180, 0});
+            actor->transform.rotation = glm::radians(glm::vec3{ 0, 180, 0 });
 
             auto cameraComponent = CREATE_CLASS(CameraComponent);
             cameraComponent->SetPerspective(70.0f, ENGINE.GetSystem<Renderer>()->GetWidth() / (float)ENGINE.GetSystem<Renderer>()->GetHeight(), 0.1f, 100.0f);
             actor->AddComponent(std::move(cameraComponent));
-            
+
             auto cameraController = CREATE_CLASS(CameraController);
             cameraController->speed = 5;
             cameraController->sensitivity = 0.5;
@@ -46,8 +46,18 @@ namespace nc
             actor->AddComponent(std::move(cameraController));
 
             m_scene->Add(std::move(actor));
-        } 
+        }
 
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                auto actor = CREATE_CLASS_BASE(Actor, "tree");
+                actor->transform.position = glm::vec3{ randomf(-10, 10), 0, randomf(-10,10) };
+                actor->transform.scale = glm::vec3{ randomf(0.5f, 0.5f), randomf(0.5f, 0.5f), 0 };
+                actor->Initialize();
+                m_scene->Add(std::move(actor));
+            }
+        }
         return true;
     }
 
