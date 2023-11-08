@@ -26,7 +26,7 @@ namespace nc
         }
 
         //Light
-        {
+       /* {
             auto actor = CREATE_CLASS(Actor);
             actor->name = "light1";
             actor->transform.position = glm::vec3{ 3, 3, 3 };
@@ -39,10 +39,10 @@ namespace nc
             lightComponent->outerAngle = 30.0f;
             actor->AddComponent(std::move(lightComponent));
             m_scene->Add(std::move(actor));
-        }
+        }*/
 
         //Camera
-        {
+        /*{
             auto actor = CREATE_CLASS(Actor);
             actor->name = "camera1";
             actor->transform.position = glm::vec3{ 0, 0, 3 };
@@ -60,7 +60,7 @@ namespace nc
             actor->AddComponent(std::move(cameraController));
 
             m_scene->Add(std::move(actor));
-        }
+        }*/
         return true;
     }
 

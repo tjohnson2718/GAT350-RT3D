@@ -1,3 +1,4 @@
+INFO: Factory.h(74) Class registered: RotateComponent
 INFO: Factory.h(74) Class registered: ModelComponent
 INFO: Factory.h(74) Class registered: LightComponent
 INFO: Factory.h(74) Class registered: EnginePhysicsComponent

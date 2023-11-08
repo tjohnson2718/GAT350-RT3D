@@ -46,6 +46,9 @@
     <ClCompile Include="Components\CameraController.cpp">
       <Filter>Source\Components</Filter>
     </ClCompile>
+    <ClCompile Include="RotateComponent.cpp">
+      <Filter>Source\Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h">

@@ -14,7 +14,8 @@ namespace nc
 		{
 			// set aspect with renderer width / renderer height (make sure it is a floating point division)
 			// aspect = width / height;
-			aspect = static_cast<float>(renderer.GetWidth()) / static_cast<float>(renderer.GetHeight());
+			//aspect = static_cast<float>(renderer.GetWidth()) / static_cast<float>(renderer.GetHeight());
+			aspect = ENGINE.GetSystem<Renderer>()->GetWidth() / (float)ENGINE.GetSystem<Renderer>()->GetHeight();
 			// Im not convinced that this worked
 		}
 
