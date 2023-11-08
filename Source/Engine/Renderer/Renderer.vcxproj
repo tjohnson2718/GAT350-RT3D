@@ -201,6 +201,7 @@ xcopy "$(ThirdPartyDir)assimp\lib\$(Configuration)\*.dll" "$(SolutionDir)Build" 
     <ClCompile Include="..\..\ThirdParty\imgui\imgui_widgets.cpp" />
     <ClCompile Include="Cubemap.cpp" />
     <ClCompile Include="Font.cpp" />
+    <ClCompile Include="Framebuffer.cpp" />
     <ClCompile Include="Gui.cpp" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="Model.cpp" />
@@ -213,6 +214,7 @@ xcopy "$(ThirdPartyDir)assimp\lib\$(Configuration)\*.dll" "$(SolutionDir)Build" 
   <ItemGroup>
     <ClInclude Include="Cubemap.h" />
     <ClInclude Include="Font.h" />
+    <ClInclude Include="Framebuffer.h" />
     <ClInclude Include="Gui.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="Model.h" />

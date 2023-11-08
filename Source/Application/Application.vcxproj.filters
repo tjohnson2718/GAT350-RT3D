@@ -37,6 +37,9 @@
     <ClCompile Include="World05.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="World06.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World01.h">
@@ -52,6 +55,9 @@
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="World05.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="World06.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
@@ -195,6 +201,12 @@
       <Filter>Shaders</Filter>
     </None>
     <None Include="..\..\Build\Assets\Materials\tree.mtrl">
+      <Filter>Materials</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Scenes\scene_framebuffer.json">
+      <Filter>Scenes</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\framebuffer.mtrl">
       <Filter>Materials</Filter>
     </None>
   </ItemGroup>

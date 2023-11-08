@@ -114,5 +114,8 @@
     <ClInclude Include="Components\CameraController.h">
       <Filter>Source\Components</Filter>
     </ClInclude>
+    <ClInclude Include="RotateComponent.h">
+      <Filter>Source\Components</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -66,10 +66,10 @@ namespace nc
 		glFrontFace(GL_CCW);
 	}
 
-	void Renderer::BeginFrame()
+	void Renderer::BeginFrame(const glm::vec3& color)
 	{
 		glDepthMask(GL_TRUE);
-		glClearColor(0, 0, 0, 1);
+		glClearColor(color.r, color.g, color.b, 1);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
 
@@ -108,7 +108,7 @@ namespace nc
 		glViewport(0, 0, width, height);
 	}
 
-	void Renderer::ResetViewport(int width, int height)
+	void Renderer::ResetViewport()
 	{
 		glViewport(0, 0, m_width, m_height);
 	}

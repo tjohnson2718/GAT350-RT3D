@@ -150,6 +150,7 @@
     <ClInclude Include="Event\EventManager.h" />
     <ClInclude Include="Factory.h" />
     <ClInclude Include="Framework.h" />
+    <ClInclude Include="RotateComponent.h" />
     <ClInclude Include="World.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Resource\Resource.h" />
