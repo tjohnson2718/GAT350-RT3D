@@ -1,5 +1,5 @@
 #pragma once
-#include "Components/Component.h"
+#include "Component.h"
 #include <glm/glm/glm.hpp>
 
 namespace nc

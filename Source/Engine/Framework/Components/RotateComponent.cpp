@@ -1,5 +1,5 @@
 #include "RotateComponent.h"
-#include "Actor.h"
+#include "Framework/Actor.h"
 
 namespace nc
 {
