@@ -58,8 +58,37 @@ namespace nc
         effect = m_params & COLORTINT_MASK;
         if (ImGui::Checkbox("Tint", &effect))
         {
+            ImGui::ColorEdit3("Color", (float*)&tint);
             if (effect) m_params |= COLORTINT_MASK;
             else m_params ^= COLORTINT_MASK;
+        }
+
+        effect = m_params & GRAIN_MASK;
+        if (ImGui::Checkbox("Grain", &effect))
+        {
+            if (effect) m_params |= GRAIN_MASK;
+            else m_params ^= GRAIN_MASK;
+        }
+
+        effect = m_params & SCANLINE_MASK;
+        if (ImGui::Checkbox("Scanline", &effect))
+        {
+            if (effect) m_params |= SCANLINE_MASK;
+            else m_params ^= SCANLINE_MASK;
+        }
+
+        effect = m_params & VIGNETTE_MASK;
+        if (ImGui::Checkbox("Vignette", &effect))
+        {
+            if (effect) m_params |= VIGNETTE_MASK;
+            else m_params ^= VIGNETTE_MASK;
+        }
+
+        effect = m_params |= RADIAL_BLUR_MASK;
+        if (ImGui::Checkbox("Radial Blur", &effect))
+        {
+            if (effect) m_params |= RADIAL_BLUR_MASK;
+            else m_params ^= RADIAL_BLUR_MASK;
         }
 
         ImGui::End();
