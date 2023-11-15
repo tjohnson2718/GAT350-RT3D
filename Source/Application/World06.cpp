@@ -58,7 +58,7 @@ namespace nc
         effect = m_params & COLORTINT_MASK;
         if (ImGui::Checkbox("Tint", &effect))
         {
-            ImGui::ColorEdit3("Color", (float*)&tint);
+            //ImGui::ColorEdit4("Color", (float*)&tint);
             if (effect) m_params |= COLORTINT_MASK;
             else m_params ^= COLORTINT_MASK;
         }

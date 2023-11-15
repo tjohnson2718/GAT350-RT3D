@@ -1,0 +1,18 @@
+{
+    "program": "shaders/lit_phong.prog",
+    "albedoTexture": "fantasy/textures/Medieval_Texture.png",
+    "albedo": [
+        1,
+        1,
+        1,
+        1
+    ],
+    "specular": [
+        1,
+        1,
+        1
+    ],
+    "shininess": 60,
+    "tiling": [ 1, 1 ],
+    "offset": [ 0, 0 ]
+}

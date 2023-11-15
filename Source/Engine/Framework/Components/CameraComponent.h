@@ -8,6 +8,13 @@ namespace nc
 	class CameraComponent : public Component
 	{
 	public:
+		enum eProjectionType
+		{
+			Perspective,
+			Orthographic
+		};
+
+	public:
 		CLASS_DECLARATION(CameraComponent)
 
 		bool Initialize() override;
@@ -27,6 +34,9 @@ namespace nc
 		float aspect = 0.0f;
 		float near = 0.1f;
 		float far = 100.0f;
+
+		eProjectionType projectionType{ Perspective };
+		float size{ 8 };
 
 		Renderer renderer;
 	};

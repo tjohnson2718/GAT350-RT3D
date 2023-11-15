@@ -47,17 +47,17 @@ vec3 applyScanline(vec3 color, vec2 texCoord) {
 }
 
 vec3 applyVignette(vec3 color, vec2 texCoord) {
-    float vignetteIntensity = 0.4; // Adjust the intensity of the vignette
+    float vignetteIntensity = 0.4; 
     float radius = length(texCoord - 0.5);
     return color * smoothstep(1.0, 1.0 - vignetteIntensity, radius);
 }
 
 vec3 applyRadialBlur(vec3 color, vec2 texCoord) {
-    float blurAmount = 0.02; // Adjust the amount of radial blur
+    float blurAmount = 0.02;
     vec2 center = vec2(0.5, 0.5);
     vec2 offset = texCoord - center;
     float radialBlurFactor = exp(-dot(offset, offset) / blurAmount);
-    return mix(color, color * radialBlurFactor, 0.5); // Adjust the mix factor
+    return mix(color, color * radialBlurFactor, 0.5);
 }
 
 void main()
