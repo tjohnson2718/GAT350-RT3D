@@ -68,27 +68,48 @@
 		},
 		{
 			"type": "Actor",
+			"name": "Depth Debug",
+			"persistent": true,
+			"active": false,
+			"transform": {
+				"position": [ 2.4, 1.4, 0 ],
+				"scale": [ 0.5, 0.5, 0.5 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "models/quad.obj",
+					"materialName": "materials/sprite.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
 			"name": "light1",
 			"persistent": true,
 			"active": true,
 			"prototype": false,
 			"transform": {
-				"position": [ 0, 0, 3 ],
+				"position": [ 0, 3, 0 ],
 				"scale": [ 1, 1, 1 ],
-				"rotation": [ 0, 0, 0 ]
+				"rotation": [ 90, 0, 0 ]
 			},
 			"components": [
 				{
 					"type": "LightComponent",
-					"lightType": "point",
+					"lightType": "directional",
 					"color": [ 1, 1, 1 ],
 					"intensity": 1,
 					"range": 50,
 					"innerAngle": 10,
-					"outerAngle": 30
+					"outerAngle": 30,
+					"castShadow": true
 				},
 				{
-					"type": "RotateComponent"
+					"type": "ModelComponent",
+					"modelName": "models/quad.obj",
+					"materialName": "materials/ui_light.mtrl"
 				}
 			]
 		},
@@ -111,7 +132,7 @@
 				},
 				{
 					"type": "CameraController",
-					"speed": 2,
+					"speed": 5,
 					"sensitivity": 0.3
 				}
 			]

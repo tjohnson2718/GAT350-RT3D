@@ -78,6 +78,11 @@ namespace nc
 		SDL_GL_SwapWindow(m_window);
 	}
 
+	void Renderer::ClearDepth()
+	{
+		glClear(GL_DEPTH_BUFFER_BIT);
+	}
+
 	void Renderer::SetColor(uint8_t r, uint8_t g, uint8_t b, uint8_t a)
 	{
 		SDL_SetRenderDrawColor(m_renderer, r, g, b, a);

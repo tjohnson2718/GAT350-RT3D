@@ -68,6 +68,32 @@ namespace nc
 		return true;
 	}
 
+	bool Framebuffer::CreateDepthbuffer(res_t<Texture> texture)
+	{
+
+		m_texture = texture;
+		m_size = m_texture->GetSize();
+		m_texture->Bind();
+
+		glGenFramebuffers(1, &m_fbo);
+		glBindFramebuffer(GL_FRAMEBUFFER, m_fbo);
+
+		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, m_texture->m_texture, 0);
+
+		glDrawBuffer(GL_NONE);
+		glReadBuffer(GL_NONE);
+
+		if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+		{
+			ERROR_LOG("Error creating frame buffer.");
+			return false;
+		}
+
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+		return true;
+	}
+
 	void Framebuffer::Bind()
 	{
 		glBindFramebuffer(GL_FRAMEBUFFER, m_fbo);

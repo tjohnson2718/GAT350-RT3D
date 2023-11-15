@@ -16,6 +16,7 @@ namespace nc
 		bool Create(std::string filename, ...) override;
 		bool CreateFramebuffer(res_t<Texture> texture);
 		bool CreateDepthbuffer(int width, int height);
+		bool CreateDepthbuffer(res_t<Texture> texture);
 
 		void Bind();
 		void Unbind();

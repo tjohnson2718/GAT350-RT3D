@@ -233,5 +233,17 @@
     <None Include="..\..\Build\Assets\Fantasy\fantasy.mtrl">
       <Filter>Materials</Filter>
     </None>
+    <None Include="..\..\Build\Assets\Materials\ui_light.mtrl">
+      <Filter>Materials</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\shadow_depth.prog">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\shadow_depth.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\shadow_depth.frag">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>
