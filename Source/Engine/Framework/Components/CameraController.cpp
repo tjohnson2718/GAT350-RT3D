@@ -41,20 +41,20 @@ namespace nc
 		glm::vec3 direction{ 0 };
 
 		// Unity Controls
-		/*if (ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_A)) direction.x += 1;
+		if (ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_A)) direction.x += 1;
 		if (ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_D)) direction.x -= 1;
 		if (ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_E)) direction.y += 1;
 		if (ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_Q)) direction.y -= 1;
 		if (ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_W)) direction.z += 1;
-		if (ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_S)) direction.z -= 1;*/
+		if (ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_S)) direction.z -= 1;
 
 		// My Controls
-		if (ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_A)) direction.x -= 1;
+		/*if (ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_A)) direction.x -= 1;
 		if (ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_D)) direction.x += 1;
 		if (ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_S)) direction.y += 1;
 		if (ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_W)) direction.y -= 1;
 		if (ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_E)) direction.z += 1;
-		if (ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_Q)) direction.z -= 1;
+		if (ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_Q)) direction.z -= 1;*/
 		// convert world direction space to camera space
 		direction = m_owner->transform.rotation * direction;
 		m_owner->transform.position += direction * (speed * dt);

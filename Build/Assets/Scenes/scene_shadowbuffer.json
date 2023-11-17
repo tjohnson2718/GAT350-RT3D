@@ -4,7 +4,7 @@
 			"type": "Actor",
 			"name": "Tree",
 			"persistent": true,
-			"active": true,
+			"active": false,
 			"transform": {
 				"position": [ 12.4, -2.3, -18.4 ],
 				"scale": [ 0.5, 0.5, 0.5 ],
@@ -26,7 +26,7 @@
 			"type": "Actor",
 			"name": "House",
 			"persistent": true,
-			"active": true,
+			"active": false,
 			"transform": {
 				"position": [ -2, -2.3, -6.3 ],
 				"scale": [ 0.2, 0.2, 0.2 ],
@@ -37,6 +37,28 @@
 					"type": "ModelComponent",
 					"modelName": "fantasy/obj/SF_Bld_House_Large_Blank_01.obj",
 					"materialName": "fantasy/fantasy.mtrl"
+				},
+				{
+					"type": "RotateComponent",
+					"rotation": [ 0, 180, 0 ]
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "Ogre",
+			"persistent": true,
+			"active": true,
+			"transform": {
+				"position": [ 12.4, -2.3, -18.4 ],
+				"scale": [ 0.5, 0.5, 0.5 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "models/ogre.obj",
+					"materialName": "materials/ogre.mtrl"
 				},
 				{
 					"type": "RotateComponent",

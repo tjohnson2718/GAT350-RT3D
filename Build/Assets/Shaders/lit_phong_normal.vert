@@ -12,6 +12,8 @@ out layout(location = 2) mat3 otbn;
 uniform mat4 model;
 uniform mat4 view;
 uniform mat4 projection; 
+uniform mat4 shadowVP;
+
 
 uniform struct Material
 {
@@ -33,7 +35,7 @@ void main()
 	// convert position and normal to world-view space
 	oposition = vec3(modelView * vec4(vposition, 1));
 
-	// calculat tbn matrix
+	// calculate tbn matrix
 	vec3 normal = normalize(mat3(modelView) * vnormal);
 	vec3 tangent = normalize(mat3(modelView) * vtangent);
 	vec3 bitangent = cross(normal, tangent);
@@ -42,6 +44,9 @@ void main()
 
 
 	mat4 mvp = projection * view * model;
-	gl_Position = mvp * vec4(vposition, 1.0);
+	//gl_Position = mvp * vec4(vposition, 1.0);
+
+	// Used the shadowVP matrix
+	gl_Position = shadowVP * model * vec4(vposition, 1.0);
 }
 
