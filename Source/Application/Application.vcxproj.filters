@@ -43,6 +43,9 @@
     <ClCompile Include="World07.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="World08.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World01.h">
@@ -64,6 +67,9 @@
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="World07.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="World08.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
@@ -244,6 +250,21 @@
     </None>
     <None Include="..\..\Build\Assets\Shaders\shadow_depth.frag">
       <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\cel_shader.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\cel_shader.prog">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\fantasy_cel.mtrl">
+      <Filter>Materials</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\cel.mtrl">
+      <Filter>Materials</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Scenes\scene_cel.json">
+      <Filter>Scenes</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -1,0 +1,101 @@
+{
+	"actors": [
+		{
+			"type": "Actor",
+			"name": "Cel Ball",
+			"persistent": true,
+			"active": true,
+			"transform": {
+				"position": [ 12.4, -2.3, -18.4 ],
+				"scale": [ 0.5, 0.5, 0.5 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "models/sphere.obj",
+					"materialName": "materials/cel.mtrl"
+				},
+				{
+					"type": "RotateComponent",
+					"rotation": [ 0, 180, 0 ]
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "Water",
+			"persistent": true,
+			"active": true,
+			"transform": {
+				"position": [ -95, -2.3, 0 ],
+				"scale": [ 100, 10, 10 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "fantasy/obj/SF_Env_Tile_Water_02.obj",
+					"materialName": "fantasy/fantasy.mtrl"
+				},
+				{
+					"type": "RotateComponent",
+					"rotation": [ 0, 180, 0 ]
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "light1",
+			"persistent": true,
+			"active": true,
+			"prototype": false,
+			"transform": {
+				"position": [ 0, 3, 0 ],
+				"scale": [ 1, 1, 1 ],
+				"rotation": [ 90, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "LightComponent",
+					"lightType": "directional",
+					"color": [ 1, 1, 1 ],
+					"intensity": 1,
+					"range": 50,
+					"innerAngle": 10,
+					"outerAngle": 30,
+					"castShadow": true
+				},
+				{
+					"type": "ModelComponent",
+					"modelName": "models/quad.obj",
+					"materialName": "materials/ui_light.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "camera",
+			"persistent": true,
+			"transform": {
+				"position": [ 0, 0, 3 ],
+				"scale": [ 1, 1, 1 ],
+				"rotation": [ 0, 180, 0 ]
+			},
+			"components": [
+				{
+					"type": "CameraComponent",
+					"fov": 70.0,
+					"aspect": 0.0,
+					"near": 0.1,
+					"far": 100.0
+				},
+				{
+					"type": "CameraController",
+					"speed": 5,
+					"sensitivity": 0.3
+				}
+			]
+		}
+	]
+}
