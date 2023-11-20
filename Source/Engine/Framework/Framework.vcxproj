@@ -146,6 +146,7 @@
     <ClInclude Include="Components\PhysicsComponent.h" />
     <ClInclude Include="Components\RenderComponent.h" />
     <ClInclude Include="Components\RotateComponent.h" />
+    <ClInclude Include="Editor.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Event\Event.h" />
     <ClInclude Include="Event\EventManager.h" />
@@ -167,6 +168,7 @@
     <ClCompile Include="Components\LightComponent.cpp" />
     <ClCompile Include="Components\ModelComponent.cpp" />
     <ClCompile Include="Components\RotateComponent.cpp" />
+    <ClCompile Include="Editor.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Event\EventManager.cpp" />
     <ClCompile Include="Object.cpp" />

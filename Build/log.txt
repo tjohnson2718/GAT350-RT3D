@@ -33,7 +33,3 @@ WARNING: Program.cpp(165) Could not find uniform location: shadowVP
 WARNING: Program.cpp(165) Could not find uniform location: shadowBias
 WARNING: Program.cpp(165) Could not find uniform location: numLights
 WARNING: Program.cpp(165) Could not find uniform location: ambientLight
-WARNING: Program.cpp(165) Could not find uniform location: material.params
-WARNING: Program.cpp(165) Could not find uniform location: material.specular
-WARNING: Program.cpp(165) Could not find uniform location: material.emissive
-WARNING: Program.cpp(165) Could not find uniform location: material.shininess

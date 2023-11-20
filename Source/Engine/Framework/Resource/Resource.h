@@ -1,11 +1,12 @@
 #pragma once
+#include "Framework/Object.h"
 #include <string>
 #include <memory>
 
 namespace nc
 {
 	// Resource - Base class for all resources used in the engine (Texture, Models, Audio Clips, ...)
-	class Resource
+	class Resource : public Object
 	{
 	public:
 		virtual ~Resource() = default;

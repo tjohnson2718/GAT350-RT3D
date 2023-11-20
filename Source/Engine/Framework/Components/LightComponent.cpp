@@ -17,6 +17,7 @@ namespace nc
 
 	void LightComponent::SetProgram(const res_t<Program> program, const std::string& name)
 	{
+		
 		program->SetUniform(name + ".type", type);
 		program->SetUniform(name + ".position", m_owner->transform.position);
 		program->SetUniform(name + ".direction", m_owner->transform.Forward());

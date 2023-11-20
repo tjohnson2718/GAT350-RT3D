@@ -9,6 +9,7 @@ out layout(location = 1) vec3 onormal;
 out layout(location = 2) vec2 otexcoord;
 out layout(location = 3) vec4 oshadowcoord;
 
+
 uniform mat4 model;
 uniform mat4 view;
 uniform mat4 projection; 

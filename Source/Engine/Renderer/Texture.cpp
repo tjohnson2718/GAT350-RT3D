@@ -94,4 +94,13 @@ namespace nc
 
 		return true;
 	}
+
+	void Texture::ProcessGui()
+	{
+		ImGui::TextColored(ImVec4{ 0, 1, 0, 1 }, "Name: %s", name.c_str());
+		ImGui::Text("Size: %d x %d", m_size.x, m_size.y);
+		ImGui::Separator();
+		ImVec2 size = ImVec2(256, 256);
+		ImGui::Image((void*)(intptr_t)m_texture, size);
+	}
 }

@@ -4,6 +4,7 @@
 #include "Actor.h"
 #include "World.h"
 #include "Scene.h"
+#include "Editor.h"
 
 #include "Components/Component.h"
 
