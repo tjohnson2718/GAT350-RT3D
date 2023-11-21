@@ -192,6 +192,7 @@ xcopy "$(ThirdPartyDir)assimp\lib\$(Configuration)\*.dll" "$(SolutionDir)Build" 
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\ThirdParty\glad\src\glad.c" />
+    <ClCompile Include="..\..\ThirdParty\imgui\ImFileDialog.cpp" />
     <ClCompile Include="..\..\ThirdParty\imgui\imgui.cpp" />
     <ClCompile Include="..\..\ThirdParty\imgui\imgui_draw.cpp" />
     <ClCompile Include="..\..\ThirdParty\imgui\imgui_impl_opengl3.cpp" />
@@ -212,6 +213,7 @@ xcopy "$(ThirdPartyDir)assimp\lib\$(Configuration)\*.dll" "$(SolutionDir)Build" 
     <ClCompile Include="VertexBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\ThirdParty\imgui\ImFileDialog.h" />
     <ClInclude Include="Cubemap.h" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="Framebuffer.h" />

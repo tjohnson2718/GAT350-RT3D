@@ -9,6 +9,7 @@ namespace nc
     {
         m_scene = std::make_unique<Scene>();
         m_scene->Load("scenes/scene_framebuffer.json");
+        m_editor = std::make_unique<Editor>();
         m_scene->Initialize();
 
         auto texture = std::make_shared<Texture>();
@@ -36,7 +37,7 @@ namespace nc
     {
         ENGINE.GetSystem<Gui>()->BeginFrame();
         m_scene->Update(dt);
-        m_scene->ProcessGui();
+        m_editor->ProcessGui(m_scene.get());
 
         //set postprocess gui
         ImGui::Begin("Post-Process");

@@ -1,0 +1,11 @@
+{
+  "program": "shaders/unlit_sprite.prog",
+  "albedoTexture": "textures/camera.png",
+  "albedo": [
+    1,
+    1,
+    1
+  ],
+  "tiling": [ 1, 1 ],
+  "offset": [ 0, 0 ]
+}

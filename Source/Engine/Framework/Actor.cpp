@@ -8,6 +8,7 @@ namespace nc
 	
 	Actor::Actor(const Actor& other)
 	{
+		active = other.active;
 		name = other.name;
 		tag = other.tag;
 		lifespan = other.lifespan;

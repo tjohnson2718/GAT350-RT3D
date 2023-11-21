@@ -4,7 +4,7 @@
 			"type": "Actor",
 			"name": "Tree",
 			"persistent": true,
-			"active": false,
+			"active": true,
 			"transform": {
 				"position": [ 12.4, -2.3, -18.4 ],
 				"scale": [ 0.5, 0.5, 0.5 ],
@@ -26,7 +26,7 @@
 			"type": "Actor",
 			"name": "House",
 			"persistent": true,
-			"active": false,
+			"active": true,
 			"transform": {
 				"position": [ -2, -2.3, -6.3 ],
 				"scale": [ 0.2, 0.2, 0.2 ],
@@ -48,7 +48,7 @@
 			"type": "Actor",
 			"name": "Ogre",
 			"persistent": true,
-			"active": true,
+			"active": false,
 			"transform": {
 				"position": [ 12.4, -2.3, -18.4 ],
 				"scale": [ 0.5, 0.5, 0.5 ],
@@ -127,11 +127,6 @@
 					"innerAngle": 10,
 					"outerAngle": 30,
 					"castShadow": true
-				},
-				{
-					"type": "ModelComponent",
-					"modelName": "models/quad.obj",
-					"materialName": "materials/ui_light.mtrl"
 				}
 			]
 		},

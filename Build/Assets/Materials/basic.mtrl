@@ -1,0 +1,16 @@
+{
+  "program": "shaders/lit_phong.prog",
+  "albedo": [
+    1,
+    1,
+    1
+  ],
+  "specular": [
+    1,
+    1,
+    1
+  ],
+  "shininess": 60,
+  "tiling": [ 1, 1 ],
+  "offset": [ 0, 0 ]
+}

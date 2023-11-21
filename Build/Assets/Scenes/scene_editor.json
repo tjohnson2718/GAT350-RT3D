@@ -1,0 +1,84 @@
+{
+	"actors": [
+		{
+			"type": "Actor",
+			"name": "Camera",
+			"persistent": true,
+			"prototype": true,
+			"active": false,
+			"transform": {
+				"scale": [ 0.1, 0.1, 0.1 ]
+			},
+			"components": [
+				{
+					"type": "CameraComponent",
+					"fov": 70.0,
+					"near": 0.1,
+					"far": 100.0
+				},
+				{
+					"type": "ModelComponent",
+					"modelName": "models/quad.obj",
+					"materialName": "materials/ui_camera.mtrl",
+					"castShadow": false
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "Light",
+			"persistent": true,
+			"prototype": true,
+			"active": true,
+			"transform": {
+				"scale": [ 0.1, 0.1, 0.1 ]
+			},
+			"components": [
+				{
+					"type": "LightComponent",
+					"lightType": "point",
+					"color": [ 1, 1, 1 ],
+					"intensity": 1,
+					"range": 20,
+					"innerAngle": 10,
+					"outerAngle": 30,
+					"castShadow": false
+				},
+				{
+					"type": "ModelComponent",
+					"modelName": "models/quad.obj",
+					"materialName": "materials/ui_light.mtrl",
+					"castShadow": false
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "Sphere",
+			"persistent": true,
+			"prototype": true,
+			"active": true,
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "models/sphere.obj",
+					"materialName": "materials/basic.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "Cube",
+			"persistent": true,
+			"prototype": true,
+			"active": true,
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "models/cube.obj",
+					"materialName": "materials/basic.mtrl"
+				}
+			]
+		}
+	]
+}
