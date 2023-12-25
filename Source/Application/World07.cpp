@@ -37,7 +37,6 @@ namespace nc
             material->depthTexture = texture;
         }
         
-
         return true;
     }
 
@@ -90,7 +89,6 @@ namespace nc
         renderer.ResetViewport();
         renderer.BeginFrame();
         m_scene->Draw(renderer);
-
 
         // post-render
         ENGINE.GetSystem<Gui>()->Draw();

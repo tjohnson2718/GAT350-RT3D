@@ -192,6 +192,7 @@
     <None Include="..\..\Build\Assets\Scenes\scene.json" />
     <None Include="..\..\Build\Assets\Scenes\scene_cel.json" />
     <None Include="..\..\Build\Assets\Scenes\scene_editor.json" />
+    <None Include="..\..\Build\Assets\Scenes\scene_final.json" />
     <None Include="..\..\Build\Assets\Scenes\scene_framebuffer.json" />
     <None Include="..\..\Build\Assets\Scenes\scene_shadowbuffer.json" />
     <None Include="..\..\Build\Assets\Shaders\cel_shader.frag" />

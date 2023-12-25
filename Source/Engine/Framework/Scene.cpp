@@ -62,11 +62,26 @@ namespace nc
 		}
 	}
 
-	void Scene::Add(std::unique_ptr<Actor> actor)
+	void Scene::Add(std::unique_ptr<Actor> actor, Actor* prevActor)
 	{
 		actor->m_scene = this;
 		actor->m_game = m_game;
-		m_actors.push_back(std::move(actor));
+
+		//check if previous actor pointer provided
+		if (prevActor)
+		{
+			//find prev actor iterator
+			auto iter = std::find_if(m_actors.begin(), m_actors.end(), [prevActor](auto& actor) { return actor.get() == prevActor; });
+			// if previous actor found, set iterator to next element
+			iter = (iter != m_actors.end()) ? std::next(iter) : iter;
+			// insert new actor (before iterator)
+			m_actors.insert(iter, std::move(actor));
+		}
+		else
+		{
+			// previous actor pointer not provided add to back of container
+			m_actors.push_back(std::move(actor));
+		}
 	}
 
 	void Scene::RemoveAll(bool force)

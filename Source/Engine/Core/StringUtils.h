@@ -11,6 +11,8 @@ namespace nc
 		static bool IsEqualIgnoreCase(const std::string& str1, const std::string& str2);
 		static std::string CreateUnique(const std::string& str);
 		static std::string Reverse(const std::string& str, int index = 0);
+		static int GetTrailingNumber(const std::string& str);
+		static std::string RemoveTrailingNumber(const std::string& str);
 		
 	private:
 		static unsigned int uniqueCounter;

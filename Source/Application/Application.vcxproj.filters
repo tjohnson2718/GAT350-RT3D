@@ -269,5 +269,8 @@
     <None Include="..\..\Build\Assets\Scenes\scene_editor.json">
       <Filter>Scenes</Filter>
     </None>
+    <None Include="..\..\Build\Assets\Scenes\scene_final.json">
+      <Filter>Scenes</Filter>
+    </None>
   </ItemGroup>
 </Project>

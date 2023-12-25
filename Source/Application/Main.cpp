@@ -11,9 +11,6 @@
 #include "Renderer/Renderer.h"
 
 using namespace std;
-
-
-
 int main(int argc, char* argv[])
 {
 	std::string strOne = "Hello";
@@ -32,7 +29,7 @@ int main(int argc, char* argv[])
 
 	ENGINE.Initialize();
 
-	auto world = make_unique<nc::World06>();
+	auto world = make_unique<nc::World08>();
 	world->Initialize();
 
 	// main loop

@@ -8,7 +8,9 @@ namespace nc
     bool World08::Initialize()
     {
         m_scene = std::make_unique<Scene>();
+
         m_scene->Load("scenes/scene_editor.json");
+        m_scene->Load("scenes/scene_final.json");
         m_scene->Initialize();
 
         m_editor = std::make_unique<Editor>();
@@ -61,6 +63,7 @@ namespace nc
 
     void World08::Draw(Renderer& renderer)
     {
+        /*
         // ** Pass 1 **
         auto framebuffer = GET_RESOURCE(Framebuffer, "depth_buffer");
         renderer.SetViewport(framebuffer->GetSize().x, framebuffer->GetSize().y);
@@ -89,7 +92,7 @@ namespace nc
         }
 
         framebuffer->Unbind();
-        
+        */
 
         // *** PASS 2 ***
         renderer.ResetViewport();

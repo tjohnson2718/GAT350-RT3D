@@ -5,7 +5,7 @@
 			"name": "Camera",
 			"persistent": true,
 			"prototype": true,
-			"active": false,
+			"active": true,
 			"transform": {
 				"scale": [ 0.1, 0.1, 0.1 ]
 			},
@@ -28,8 +28,8 @@
 			"type": "Actor",
 			"name": "Light",
 			"persistent": true,
-			"prototype": true,
 			"active": true,
+			"prototype": true,
 			"transform": {
 				"scale": [ 0.1, 0.1, 0.1 ]
 			},
@@ -56,13 +56,13 @@
 			"type": "Actor",
 			"name": "Sphere",
 			"persistent": true,
-			"prototype": true,
 			"active": true,
+			"prototype": true,
 			"components": [
 				{
 					"type": "ModelComponent",
 					"modelName": "models/sphere.obj",
-					"materialName": "materials/basic.mtrl"
+					"materialName": "materials/reflection.mtrl"
 				}
 			]
 		},
@@ -70,13 +70,13 @@
 			"type": "Actor",
 			"name": "Cube",
 			"persistent": true,
-			"prototype": true,
 			"active": true,
+			"prototype": true,
 			"components": [
 				{
 					"type": "ModelComponent",
 					"modelName": "models/cube.obj",
-					"materialName": "materials/basic.mtrl"
+					"materialName": "materials/reflection.mtrl"
 				}
 			]
 		}
